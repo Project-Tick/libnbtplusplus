@@ -126,23 +126,10 @@ typedef tag_array<int8_t> tag_byte_array;
 typedef tag_array<int32_t> tag_int_array;
 typedef tag_array<int64_t> tag_long_array;
 
-// Explicit specialization declarations
-template<>
-void tag_array<int8_t>::read_payload(io::stream_reader&);
-
-template<>
-void tag_array<int64_t>::read_payload(io::stream_reader&);
-
-template<>
-void tag_array<int8_t>::write_payload(io::stream_writer&) const;
-
-template<>
-void tag_array<int64_t>::write_payload(io::stream_writer&) const;
-
 //Explicit instantiations
-extern template class NBT_EXPORT tag_array<int8_t>;
-extern template class NBT_EXPORT tag_array<int32_t>;
-extern template class NBT_EXPORT tag_array<int64_t>;
+template class NBT_EXPORT tag_array<int8_t>;
+template class NBT_EXPORT tag_array<int32_t>;
+template class NBT_EXPORT tag_array<int64_t>;
 
 }
 
